@@ -13,29 +13,22 @@ import com.cricket.model.Match;
 
 public class InputController {
 	public static Queue<String> getInput() {
-		String path = "C:\\Users\\home\\eclipse-workspace_new\\Ulaganayagi_kiruthika_BComCA\\src\\com\\cricket\\model\\input2.txt";
+		String path = "C:\\Users\\home\\git\\cricket-console\\Ulaganayagi_kiruthika_BComCA\\src\\com\\cricket\\model\\input.txt";
 		try {
 			BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
 			Queue<String> input = new LinkedList<>();
 			String currentLine = bufferedReader.readLine();
 			while (currentLine != null) {
 				input.addAll(Arrays.asList(currentLine.split(",")));
-//				input.add(currentLine);
 				currentLine = bufferedReader.readLine();
 			}
 			bufferedReader.close();
 			return input;
-//			storeValue(input);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return null;
-	}
-	
-	Match storeValue(List<String> input) {
-		
 		return null;
 	}
 }

@@ -28,11 +28,11 @@ public class Team {
 		this.batsmen = batsmen;
 	}
 
-	public List<Bowler> getBolwers() {
+	public List<Bowler> getBowlers() {
 		return bowlers;
 	}
 
-	public void setBolwers(List<Bowler> bolwers) {
+	public void setBowlers(List<Bowler> bolwers) {
 		this.bowlers = bolwers;
 	}
 

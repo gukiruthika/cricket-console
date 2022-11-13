@@ -28,7 +28,7 @@ public class OutputController {
 		for (int i = 0; i < 2; i++) {
 			Bowler bowler = new Bowler();
 			bowler.setName(input.poll());
-			Match.getInstance().getFirstInnings().getBattingTeam().getBolwers().add(bowler);
+			Match.getInstance().getFirstInnings().getBattingTeam().getBowlers().add(bowler);
 		}
 		for (int i = 0; i < 3; i++) {
 			Batsman batsman = new Batsman();
@@ -38,7 +38,7 @@ public class OutputController {
 		for (int i = 0; i < 2; i++) {
 			Bowler bowler = new Bowler();
 			bowler.setName(input.poll());
-			Match.getInstance().getFirstInnings().getBowlingTeam().getBolwers().add(bowler);
+			Match.getInstance().getFirstInnings().getBowlingTeam().getBowlers().add(bowler);
 		}
 		Match.getInstance().getSecondInnings().setBattingTeam(Match.getInstance().getFirstInnings().getBowlingTeam());
 		Match.getInstance().getSecondInnings().setBowlingTeam(Match.getInstance().getFirstInnings().getBattingTeam());
@@ -49,8 +49,8 @@ public class OutputController {
 		striker.setStatus("In");
 		Batsman nonstriker = Match.getInstance().getFirstInnings().getBattingTeam().getBatsmen().get(1);
 		nonstriker.setStatus("In");
-		Bowler currentBowler = Match.getInstance().getFirstInnings().getBowlingTeam().getBolwers().get(0);
-		Bowler nextBowler = Match.getInstance().getFirstInnings().getBowlingTeam().getBolwers().get(1);
+		Bowler currentBowler = Match.getInstance().getFirstInnings().getBowlingTeam().getBowlers().get(0);
+		Bowler nextBowler = Match.getInstance().getFirstInnings().getBowlingTeam().getBowlers().get(1);
 		Batsman tempBatsman;
 		Bowler tempBowler;
 
@@ -131,8 +131,8 @@ public class OutputController {
 		striker.setStatus("In");
 		nonstriker = Match.getInstance().getSecondInnings().getBattingTeam().getBatsmen().get(1);
 		nonstriker.setStatus("In");
-		currentBowler = Match.getInstance().getSecondInnings().getBowlingTeam().getBolwers().get(0);
-		nextBowler = Match.getInstance().getSecondInnings().getBowlingTeam().getBolwers().get(1);
+		currentBowler = Match.getInstance().getSecondInnings().getBowlingTeam().getBowlers().get(0);
+		nextBowler = Match.getInstance().getSecondInnings().getBowlingTeam().getBowlers().get(1);
 
 		while (input.size() > 0) {
 			outcome = input.poll();
@@ -241,7 +241,7 @@ public class OutputController {
 
 	public String getBowling(Innings innings) {
 		String output = "";
-		List<Bowler> bowlers = innings.getBattingTeam().getBolwers();
+		List<Bowler> bowlers = innings.getBattingTeam().getBowlers();
 		for (Bowler bowler : bowlers) {
 			output += bowler.getName() + " - ";
 			output += bowler.getBallsBowled() / 6;
@@ -254,7 +254,7 @@ public class OutputController {
 
 	public String getPlayerStats(Innings innings) {
 		String output = "";
-		List<Bowler> bowlers = innings.getBattingTeam().getBolwers();
+		List<Bowler> bowlers = innings.getBattingTeam().getBowlers();
 		List<Batsman> batsmen = innings.getBattingTeam().getBatsmen();
 		for (Batsman batsman : batsmen) {
 			output += batsman.getName() + " - ";
@@ -272,7 +272,7 @@ public class OutputController {
 				output += "." + bowler.getBallsBowled() % 6;
 			output += ") - W " + bowler.getWickets() + " - C "
 					+ Math.round(((double) bowler.getWickets() / innings.getBowlingTeam().getTotalWickets() * 100))
-					+ "% "; 
+					+ "% \n"; 
 //					+ bowler.getWickets() + "/" + innings.getBowlingTeam().getTotalWickets() + "wickets)\n";
 		}
 		return output;

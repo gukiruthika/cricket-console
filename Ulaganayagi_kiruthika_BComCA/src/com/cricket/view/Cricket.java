@@ -1,7 +1,5 @@
 package com.cricket.view;
 
-import java.util.Queue;
-
 import com.cricket.controller.InputController;
 import com.cricket.controller.OutputController;
 import com.cricket.model.Innings;
@@ -16,21 +14,14 @@ public class Cricket {
 	public static void main(String[] args) {
 		Cricket cricket = new Cricket();
 		cricket.process();
-
 	}
 
 	private void process() {
-//		getInput();
 		outputController.storeValues(InputController.getInput());
 		showOutput(Match.getInstance().getFirstInnings());
 		showOutput(Match.getInstance().getSecondInnings());
-		
 	}
 
-//	private void getInput() {
-//		Queue<String> input = InputController.getInput();
-//		outputController.storeValues(input);
-//	}
 	
 	private void showOutput(Innings innings) {
 		System.out.println("Team Scores:");
